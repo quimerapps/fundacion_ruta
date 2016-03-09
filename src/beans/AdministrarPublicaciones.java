@@ -15,64 +15,9 @@ public class AdministrarPublicaciones {
 
 	private int numeroColumnasMujeres = 42;
 
-	public int contactar(String correo, String nombre, String telefono,
-			String contenido) {
 
-		int exito = 0;
-		try {
 
-			Parametro parametro = new Parametro();
-			Email email = new Email();
 
-			String[] parametros = parametro.getarametros();
-			int c = 0;
-
-			String asunto = "";
-			String mensaje = "";
-
-			if (c == 0) {
-				asunto = "Nuevo contacto desde el sitio Web de Multiemergencias";
-				mensaje = "<table width='100%' border='0'>"
-						+ "<tr>"
-						+ "<td colspan='2' align='left' valign='middle'><strong><span class='Estilo2'>SITIO WEB Multiemergencias</strong></td>"
-						+ "</tr>"
-						+ "<tr>"
-						+ "<td colspan='2'>&nbsp;</td>"
-						+ "</tr>"
-						+ "<tr>"
-						+ "<td colspan='2'><p>Estimado administrador(a) existe un nuevo comentario de contacto desde el sitio Web. Éstos son los datos:<br><br>-<strong>Nombres:</strong>"
-						+ nombre
-						+ "<br><br>-<strong>Correo:</strong>"
-						+ correo
-						+ "<br><br>-<strong>Teléfono:</strong>"
-						+ telefono
-						+ "<br><br>-<strong>Contenido</strong>:<br>"
-						+ contenido
-						+ "<br><br>* Puedes visitar nuestro portal en cualquier momento dirigi&eacute;ndote a la direcci&oacute;n de internet: <a href='"
-						+ parametros[0] + "'>" + parametros[0]
-						+ "</a> &oacute; contactarnos a nuestro correo: "
-						+ parametros[1] + " </span></td></tr></table>";
-
-				try {
-					email.enviarEmail(mensaje, asunto, parametros[1]);
-				} catch (Exception e) {
-
-					// e.printStackTrace();
-				}
-
-				exito = 1;
-
-			}
-
-		} catch (Exception ee) {
-			// e//e.printStackTrace();
-		} finally {
-
-		}
-
-		return exito;
-
-	}
 
 	public int crearPortafolio(String titulo, String contenido) {
 		Conexion conexion = new Conexion();
@@ -1219,10 +1164,10 @@ public class AdministrarPublicaciones {
 			String mensaje = "";
 
 			if (c == 0) {
-				asunto = "Nueva cuenta en software 'Donar un árbol para la vida' - Fundación Federico Restrepo Carvajal  ";
+				asunto = "Nueva cuenta en software 'MUASOFT' - Fundación Ruta Pacífica de las Mujeres  ";
 				mensaje = "<table width='100%' border='0'>"
 						+ "<tr>"
-						+ "<td colspan='2' align='left' valign='middle'><strong>Fundación Federico Restrepo Carvajal - Software 'Donar un árbol para la vida' </strong></td>"
+						+ "<td colspan='2' align='left' valign='middle'><strong>Fundación Ruta Pacífica de las Mujeres - Software MUASOFT </strong></td>"
 						+ "</tr>"
 						+ "<tr>"
 						+ "<td colspan='2'>&nbsp;</td>"
@@ -1310,10 +1255,10 @@ public class AdministrarPublicaciones {
 			} else {
 				admin.setClave(clave);
 			}
-			asunto = "Nueva clave software 'Donar un árbol para la vida'";
+			asunto = "Nueva clave software 'MUASOFT'";
 			mensaje = "<table width='100%' border='0'>"
 					+ "<tr>"
-					+ "<td colspan='2' align='left' valign='middle'><strong>Software 'Donar un árbol para la vida' - Fundación Federico Restrepo Carvajal</strong></td>"
+					+ "<td colspan='2' align='left' valign='middle'><strong>Fundación Ruta Pacífica de las Mujeres - Software MUASOFT</strong></td>"
 					+ "</tr>"
 					+ "<tr>"
 					+ "<td colspan='2'>&nbsp;</td>"
@@ -2247,7 +2192,7 @@ public class AdministrarPublicaciones {
 					+ datos[i][5]
 					+ "','"
 					+ datos[i][2]
-					+ "','S','"
+					+ "','S','"  
 					+ datos[i][3]
 					+ "','"
 					+ datos[i][0]

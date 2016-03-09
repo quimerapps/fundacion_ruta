@@ -25,9 +25,9 @@ public class Conexion {
 	Conexion() {
 
 		DB_driver = "com.mysql.jdbc.Driver";
-		url = "jdbc:mysql://127.13.134.2:3306/fundacionfrc";
-		username = "adminavdJf1P";
-		password = "Mfwxpg8rz6QF";
+		url = "jdbc:mysql://127.4.182.2:3306/fundacionruta";
+		username = "adminL8tfZUu";
+		password = "MNF68V75yT4S";
 		
 		
     

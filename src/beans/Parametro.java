@@ -30,10 +30,10 @@ public class Parametro {
 		String[] parametros = new String[6];
 
 		// dirección web del portal(ojo sin / al final tanto linux como windows)
-		parametros[0] = "http://fundacionfrc-quimerapps.rhcloud.com/web/";
+		parametros[0] = "http://fundacionruta-quimerapps2.rhcloud.com/web/";
 
 		// correo uis del portal egresados EISI UIS parametros[1] =
-		parametros[1] = "contacto@fundacionfrc.com";   //multiemergenciassas@gmail.com  //jefenixon.zambrano@gmail.com
+		parametros[1] = "comunicaciones@rutapacifica.org.co";   //multiemergenciassas@gmail.com  //jefenixon.zambrano@gmail.com
 
 		// repositorio de imagenes ( con \\ al final si es windows o / al final si
 		// // es linux) parametros[2] =

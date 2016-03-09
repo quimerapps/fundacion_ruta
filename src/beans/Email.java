@@ -44,7 +44,7 @@ public class Email {
 
 		// SI QUEREMOS USAR A CALUMET COMO FROM PERO LO ENVIA ES EL SERVIDOR DE
 		// GMAIL
-		message.setFrom(new InternetAddress(SMTP_AUTH_USER, "Donar un árbol por la vida - Fundación Federico Restrepo Carvajal"));
+		message.setFrom(new InternetAddress(SMTP_AUTH_USER, "Fundación Ruta Pacífica de las Mujeres"));
 
 		// PARA MANDAR CORREO DE UNO EN UNO
 		message.addRecipient(Message.RecipientType.TO, new InternetAddress(Correo));

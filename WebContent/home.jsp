@@ -11,8 +11,8 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-     <title>FUNDACIÓN FEDERICO RESTREPO CARVAJAL</title>
-    <meta name="Description" content="FUNDACIÓN FEDERICO RESTREPO CARVAJAL">
+     <title>MUASOFT - Software</title>
+    <meta name="Description" content="MUASOFT - Software">
 	<meta name="viewport" content="initial-scale=1.0,width=device-width">
 <link rel="stylesheet" type="text/css" href="home_files/bootstrap.css">
 <link rel="stylesheet" type="text/css"
@@ -128,7 +128,7 @@
 	<form name="form1" id="form1" method="post"></form>
 
 	<!--HEADER-->  
-	<header  style="background-color: #F6F2F1"><img src="home_files/logo.png" alt="logo" width="220px" height="80px">
+	<header  style="background-color: #F6F2F1"><img src="home_files/logo.png" alt="logo" width="220px" height="80px">&nbsp;&nbsp;<img src="images/logoruta.png" alt="partner logo" style='width:150px; height:150px'>
 	<div class="container">
 		  
 		<!--MENU-->
@@ -140,7 +140,7 @@
 		<!--END MENU-->
 		<p><%=bUsuario.getPrimerNombre().trim() + " " + bUsuario.getSegundoNombre().trim() + " " + bUsuario.getPrimerApellido().trim() + " " + bUsuario.getSegundoApellido().trim()%><a
 				href="#"
-				onclick="document.getElementById('form1').action='index.jsp?sesion=false'; document.getElementById('form1').submit()"
+				onclick="document.getElementById('form1').action='index.html?sesion=false'; document.getElementById('form1').submit()"
 				class="cerrar" style="text-decoration: none;"> (Cerrar sesión)</a>
 		</p>
 	</div>
@@ -177,13 +177,13 @@
 	<div class="container">
 		<img src="home_files/logo-sm.png" alt="">
 		<ul class="list-inline social">
-			<li><a href="https://www.facebook.com/fundacionmujeryfuturo" target="_blank"><i class="fa fa-facebook"></i></a></li>
-			<li><a href="http://www.mujeryfuturo.org" target="_blank" ><i class="fa fa-twitter"></i></a></li>
+			<li><a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+			<li><a href="#" target="_blank" ><i class="fa fa-twitter"></i></a></li>
 			
 
 		</ul>
 		<p>
-			Contacto: contacto@fundacionfrc.com<br>http://www.fundacionfrc.com<br>Diseñado por: quimerapps.com
+			Contacto: comunicaciones@rutapacifica.org.co<br>http://www.rutapacifica.org.co//<br>Diseñado por: quimerapps.com
 		</p>
 	</div></center>
 	</footer>
