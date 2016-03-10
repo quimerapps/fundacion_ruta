@@ -10,8 +10,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <title>MUASOFT - Software</title>
-    <meta name="Description" content="MUASOFT - Software">
+      <title>FUNDACIÓN MUJER Y FUTURO</title>
+    <meta name="Description" content="Fundación Mujer y Futuro">
 <meta name="viewport" content="initial-scale=1.0,width=device-width">
     <script type="text/javascript" src="Scripts/noticias.js" charset="UTF-8"></script>
 <script type="text/javascript" src="Scripts/claves.js" charset="UTF-8"></script>
@@ -132,10 +132,10 @@
 <body> <form  name="form1" id="form1" method="post"></form> 
 
 
-	<!--HEADER-->  
-	<header  style="background-color: #F6F2F1"><img src="home_files/logo.png" alt="logo" width="220px" height="80px">&nbsp;&nbsp;<img src="images/logoruta.png" alt="partner logo" style='width:150px; height:150px'>
+<!--HEADER-->  
+	<header><img src="home_files/logo.png" alt="logo" width="220px" height="80px">
 	<div class="container">
-		  
+		
 		<!--MENU-->
 		<a href="" id="responsive-menu-button"><i class="fa fa-bars"></i></a>
 		<nav class="menu" style="display: block;">
@@ -145,7 +145,7 @@
 		<!--END MENU-->
 		<p><%=bUsuario.getPrimerNombre().trim() + " " + bUsuario.getSegundoNombre().trim() + " " + bUsuario.getPrimerApellido().trim() + " " + bUsuario.getSegundoApellido().trim()%><a
 				href="#"
-				onclick="document.getElementById('form1').action='index.html?sesion=false'; document.getElementById('form1').submit()"
+				onclick="document.getElementById('form1').action='index.jsp?sesion=false'; document.getElementById('form1').submit()"
 				class="cerrar" style="text-decoration: none;"> (Cerrar sesión)</a>
 		</p>
 	</div>
@@ -161,8 +161,10 @@
 
 						<div class="content">
 							<h4>Administradores</h4>
+
+							<p>Listado de administradores del sistema. Tenga en cuenta que debe existir por lo menos un administrador de &eacute;ste.</p>
 <br/><br/>
-<a href="#" onclick="window.open('/web/crearAdministrador.jsp', 'popup', 'toolbar=no, menubar=no, scrollbars=no, resizable=no, width=500, height=350'); return false;" style="text-decoration:none">(Crear un nuevo administrador)</a><br><br>
+<a href="#" onclick="window.open('/web/crearAdministrador.jsp', 'popup', 'toolbar=no, menubar=no, scrollbars=no, resizable=no, width=500, height=350'); return false;" style="text-decoration:none">Crear un(a) nuevo(a) administrador(a)</a><br><br>
 	    <center><span id="detalleProcesos"></span>
 <span id="detalleAdministradores"></span>
 <input name="hdnUs" id="hdnUs" type="hidden"
@@ -190,13 +192,13 @@ cargarAdministradores();
 	<div class="container">
 		<img src="home_files/logo-sm.png" alt="">
 		<ul class="list-inline social">
-			<li><a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
-			<li><a href="#" target="_blank" ><i class="fa fa-twitter"></i></a></li>
+			<li><a href="https://www.facebook.com/fundacionmujeryfuturo" target="_blank"><i class="fa fa-facebook"></i></a></li>
+			<li><a href="http://www.mujeryfuturo.org" target="_blank" ><i class="fa fa-twitter"></i></a></li>
 			
 
 		</ul>
 		<p>
-			Contacto: comunicaciones@rutapacifica.org.co<br>http://www.rutapacifica.org.co//<br>Diseñado por: quimerapps.com
+			Contacto: direccion@mujeryfuturo.org<br>Teléfonos: (+57-7)6341589 - (+57)3105765181<br>Diseñado por: quimerapps.com
 		</p>
 	</div></center>
 	</footer>

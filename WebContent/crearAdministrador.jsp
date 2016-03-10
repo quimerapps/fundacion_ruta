@@ -10,8 +10,8 @@
 
 <html>
 <head>
-   <title>FUNDACIÓN FEDERICO RESTREPO CARVAJAL</title>
-    <meta name="Description" content="FUNDACIÓN FEDERICO RESTREPO CARVAJAL">
+   <title>FUNDACIÓN MUJER Y FUTURO</title>
+    <meta name="Description" content="Fundación Mujer y Futuro">
   
 
 <? header("Cache-Control: no-cache, must-revalidate");?>
@@ -28,7 +28,7 @@
 <!--
 body {
 	background-image: url();
-background-color: #98C5E9;
+background-color: #FBD7EB;
 }
 -->
 </style>

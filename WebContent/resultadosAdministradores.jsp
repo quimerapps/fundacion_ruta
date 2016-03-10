@@ -25,23 +25,23 @@ List<Administrador> administradores = bAdministrarPublicaciones.getAdministrador
 %>
 <table width="100%" border="0" cellspacing="2" cellpadding="2">
 	<tr>
-		<td bgcolor="#F2D017">
-		<div align="center" style="color:#302014">ITEM</div>
+		<td bgcolor="#E81D8F">
+		<div align="center" style="color:#FFFFFF">ITEM</div>
 		</td>
-		<td bgcolor="#F2D017">
-		<div align="center" style="color:#302014">ADMINISTRADOR</div>
+		<td bgcolor="#E81D8F">
+		<div align="center" style="color:#FFFFFF">ADMINISTRADOR</div>
 		</td>
-		<td bgcolor="#F2D017">
-		<div align="center" style="color:#302014">DOCUMENTO</div>
+		<td bgcolor="#E81D8F">
+		<div align="center" style="color:#FFFFFF">DOCUMENTO</div>
 		</td>
-		<td bgcolor="#F2D017">
-		<div align="center" style="color:#302014">CORREO</div>
+		<td bgcolor="#E81D8F">
+		<div align="center" style="color:#FFFFFF">CORREO</div>
 		</td>
-		<td bgcolor="#F2D017">
-		<div align="center" style="color:#302014"></div>
+		<td bgcolor="#E81D8F">
+		<div align="center" style="color:#FFFFFF"></div>
 		</td>
-		<td bgcolor="#F2D017">
-		<div align="center" style="color:#302014"></div>
+		<td bgcolor="#E81D8F">
+		<div align="center" style="color:#FFFFFF"></div>
 		</td>
 	</tr>
 	<%
