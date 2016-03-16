@@ -2188,6 +2188,205 @@ public class AdministrarPublicaciones {
 		return exito;
 
 	}
+	
+	
+	public List<Object[]> getEPSARS(String id) {
+		List<Object[]> parametros = new ArrayList<Object[]>();
+		Conexion conexion = new Conexion();
+		String sentencia = " SELECT * FROM eps_ars WHERE tipo IN( '"+id+"','O') AND estado = 'A' ORDER BY nombre";
+
+		Object[] parametro = null;
+		ResultSet rs = conexion.consultarBD(sentencia);
+
+		try {
+			while (rs.next()) {
+				parametro = new Object[3];
+				parametro[0] = rs.getObject(1);
+				parametro[1] = rs.getObject(2);
+				parametro[2] = rs.getObject(3);
+
+				parametros.add(parametro);
+
+			}
+			rs.close();
+		} catch (SQLException e) {
+			// e
+		} finally {
+			conexion.cerrarConexion();
+		}
+		return parametros;
+	}
+	
+	
+	public List<Object[]> getMunicipios(String id) {
+		List<Object[]> parametros = new ArrayList<Object[]>();
+		Conexion conexion = new Conexion();
+		String sentencia = " SELECT * FROM ciudades WHERE id_departamento = "+id+" ORDER BY nombre_ciudad";
+
+		Object[] parametro = null;
+		ResultSet rs = conexion.consultarBD(sentencia);
+
+		try {
+			while (rs.next()) {
+				parametro = new Object[3];
+				parametro[0] = rs.getObject(1);
+				parametro[1] = rs.getObject(2);
+				parametro[2] = rs.getObject(3);
+
+				parametros.add(parametro);
+
+			}
+			rs.close();
+		} catch (SQLException e) {
+			// e
+		} finally {
+			conexion.cerrarConexion();
+		}
+		return parametros;
+	}
+	
+	
+	public List<Object[]> getGeneros() {
+		List<Object[]> parametros = new ArrayList<Object[]>();
+		Conexion conexion = new Conexion();
+		String sentencia = " SELECT * FROM generos ORDER BY nombre";
+
+		Object[] parametro = null; 
+		ResultSet rs = conexion.consultarBD(sentencia);
+
+		try {
+			while (rs.next()) {
+				parametro = new Object[2];
+				parametro[0] = rs.getObject(1);
+				parametro[1] = rs.getObject(2);
+		
+
+				parametros.add(parametro);
+  
+			}
+			rs.close();
+		} catch (SQLException e) {
+			// e
+		} finally {
+			conexion.cerrarConexion();
+		}
+		return parametros;
+	}
+	
+	
+	public List<Object[]> getEtnias() {
+		List<Object[]> parametros = new ArrayList<Object[]>();
+		Conexion conexion = new Conexion();
+		String sentencia = " SELECT * FROM etnias ORDER BY nombre";
+
+		Object[] parametro = null; 
+		ResultSet rs = conexion.consultarBD(sentencia);
+
+		try {
+			while (rs.next()) {
+				parametro = new Object[2];
+				parametro[0] = rs.getObject(1);
+				parametro[1] = rs.getObject(2);
+			
+
+				parametros.add(parametro);
+  
+			}
+			rs.close();
+		} catch (SQLException e) {
+			// e
+		} finally {
+			conexion.cerrarConexion();
+		}
+		return parametros;
+	}
+	
+	
+	public List<Object[]> getEstadosCiviles() {
+		List<Object[]> parametros = new ArrayList<Object[]>();
+		Conexion conexion = new Conexion();
+		String sentencia = " SELECT * FROM estados_civiles";
+
+		Object[] parametro = null; 
+		ResultSet rs = conexion.consultarBD(sentencia);
+
+		try {
+			while (rs.next()) {
+				parametro = new Object[3];
+				parametro[0] = rs.getObject(1);
+				parametro[1] = rs.getObject(2);
+				parametro[2] = rs.getObject(3);
+
+				parametros.add(parametro);
+  
+			}
+			rs.close();
+		} catch (SQLException e) {
+			// e
+		} finally {
+			conexion.cerrarConexion();
+		}
+		return parametros;
+	}
+	
+	
+	public List<Object[]> getTiposDocumento() {
+		List<Object[]> parametros = new ArrayList<Object[]>();
+		Conexion conexion = new Conexion();
+		String sentencia = " SELECT * FROM tipos_documento";
+
+		Object[] parametro = null; 
+		ResultSet rs = conexion.consultarBD(sentencia);
+
+		try {
+			while (rs.next()) {
+				parametro = new Object[3];
+				parametro[0] = rs.getObject(1);
+				parametro[1] = rs.getObject(2);
+				parametro[2] = rs.getObject(3);
+
+				parametros.add(parametro);
+  
+			}
+			rs.close();
+		} catch (SQLException e) {
+			// e
+		} finally {
+			conexion.cerrarConexion();
+		}
+		return parametros;
+	}
+	
+	
+	public List<Object[]> getDepartamentos() {
+		List<Object[]> parametros = new ArrayList<Object[]>();
+		Conexion conexion = new Conexion();
+		String sentencia = " SELECT * FROM departamentos WHERE id_pais = 1 ORDER BY nombre_departamento";
+
+		Object[] parametro = null;
+		ResultSet rs = conexion.consultarBD(sentencia);
+
+		try {
+			while (rs.next()) {
+				parametro = new Object[3];
+				parametro[0] = rs.getObject(1);
+				parametro[1] = rs.getObject(2);
+				parametro[2] = rs.getObject(3);
+
+				parametros.add(parametro);
+
+			}
+			rs.close();
+		} catch (SQLException e) {
+			// e
+		} finally {
+			conexion.cerrarConexion();
+		}
+		return parametros;
+	}
+	
+	
+	
 
 	public List<Object[]> getParametrosGlobales() {
 		List<Object[]> parametros = new ArrayList<Object[]>();

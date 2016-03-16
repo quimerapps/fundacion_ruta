@@ -5013,6 +5013,141 @@ function cargarTiposDirecciones() {
 }
 
 
+function cambiarVisibilidadLiderazgo(){
+	
+	
+	if(document.getElementById('liderazgo').value!="" && document.getElementById('liderazgo').value!="N"){
+
+		document.getElementById('anos_liderazgo').style.display = "block";
+		document.getElementById('span_liderazgo').style.display = "block";
+		
+		
+	}else{
+		document.getElementById('anos_liderazgo').style.display = "none";
+		document.getElementById('span_liderazgo').style.display = "none";
+	}
+	
+}
+
+
+function cambiarVisibilidadSubsidio(){
+	
+	
+	if(document.getElementById('subsidio').value!="" && document.getElementById('subsidio').value!="I"){
+
+		document.getElementById('span_subsidio1').style.display = "block";
+		document.getElementById('span_subsidio2').style.display = "block";
+	
+		
+	}else{
+		document.getElementById('span_subsidio1').style.display = "none";
+		document.getElementById('span_subsidio2').style.display = "none";
+	}
+	
+}
+
+
+function cambiarVisibilidadEpsArs(){
+	
+	datos = document.getElementById('eps_ars').value.split("-");
+	if(datos!=null && datos[1]=="O"){
+
+		document.getElementById('span_eps1').style.display = "block";
+		document.getElementById('span_eps2').style.display = "block";
+	
+		
+	}else{
+		document.getElementById('span_eps1').style.display = "none";
+		document.getElementById('span_eps2').style.display = "none";
+	}
+	
+}
+
+
+function cargarEpsArs() {
+	ajax = nuevoAjax();
+
+	url = "/web/resultadosEpsArs.jsp";
+	parametros = "regimen=" + document.getElementById('regimen').value;
+	
+	
+	if(document.getElementById('regimen').value=="" || document.getElementById('regimen').value=="N"){
+		
+		document.getElementById('span_eps_ars2').style.display = "none";
+		document.getElementById('span_eps_ars').style.display = "none";
+		document.getElementById('span_eps1').style.display = "none";
+		document.getElementById('span_eps2').style.display = "none";
+		
+	}else{
+		
+		document.getElementById('span_eps_ars2').style.display = "block";
+		document.getElementById('span_eps_ars').style.display = "block";
+		document.getElementById('span_eps1').style.display = "block";
+		document.getElementById('span_eps2').style.display = "block";
+		
+		
+	}
+
+	
+	ajax.onreadystatechange = function() {
+		if (ajax.readyState == 1) {
+			document.getElementById('span_eps_ars').innerHTML = "Cargando...";
+		} else if (ajax.readyState == 4) {
+			if (ajax.status == 200) {
+				document.getElementById('span_eps_ars').innerHTML = "";
+				document.getElementById('span_eps_ars').style.background = "";
+				document.getElementById('span_eps_ars').innerHTML = ajax.responseText;
+				
+				cambiarVisibilidadEpsArs();
+
+			} else if (ajax.status == 404) {
+				document.getElementById('span_eps_ars').innerHTML = "-Inexistencia, contacte administrador-";
+			} else {
+				document.getElementById('span_eps_ars').innerHTML = ajax.responseText;
+			}
+		}
+	}
+
+	ajax.open("POST", url, true);
+	ajax.setRequestHeader('Content-Type',
+			'application/x-www-form-urlencoded; charset=utf-8');
+	ajax.send(parametros);
+}
+
+
+
+function cargarMunicipioCombo(combo_municipio,combo_departamento) {
+	ajax = nuevoAjax();
+
+	url = "/web/resultadosMunicipios.jsp";
+	parametros = "departamento=" + document.getElementById(combo_departamento).value+"&nombre_combo_municipio="+combo_municipio;
+	
+
+	
+	ajax.onreadystatechange = function() {
+		if (ajax.readyState == 1) {
+			document.getElementById('span_'+combo_municipio).innerHTML = "Cargando...";
+		} else if (ajax.readyState == 4) {
+			if (ajax.status == 200) {
+				document.getElementById('span_'+combo_municipio).innerHTML = "";
+				document.getElementById('span_'+combo_municipio).style.background = "";
+				document.getElementById('span_'+combo_municipio).innerHTML = ajax.responseText;
+
+			} else if (ajax.status == 404) {
+				document.getElementById('span_'+combo_municipio).innerHTML = "-Inexistencia, contacte administrador-";
+			} else {
+				document.getElementById('span_'+combo_municipio).innerHTML = ajax.responseText;
+			}
+		}
+	}
+
+	ajax.open("POST", url, true);
+	ajax.setRequestHeader('Content-Type',
+			'application/x-www-form-urlencoded; charset=utf-8');
+	ajax.send(parametros);
+}
+
+
 
 function cargarLineasCombo() {
 	ajax = nuevoAjax();
@@ -5629,6 +5764,43 @@ function cargarPropias() {
 			'application/x-www-form-urlencoded; charset=utf-8');
 	ajax.send(parametros);
 }
+
+
+function cambiarVisibilidadEC(){
+	
+		datos = document.getElementById('estado_civil').value.split("-");
+		if(datos!=null && datos[1]=="S"){
+	
+			document.getElementById('span_ec1').style.display = "block";
+			document.getElementById('span_ec2').style.display = "block";
+		
+			
+		}else{
+			document.getElementById('span_ec1').style.display = "none";
+			document.getElementById('span_ec2').style.display = "none";
+		}
+		
+}
+
+
+function cambiarVisibilidadTI(){
+	if(document.getElementById('tipo_identificacion').value!=""){}
+		datos = document.getElementById('tipo_identificacion').value.split("-");
+		if(datos!=null && datos[1]=="S"){
+	
+			document.getElementById('span_ti1').style.display = "block";
+			document.getElementById('span_ti2').style.display = "block";
+		
+			
+		}else{
+			document.getElementById('span_ti1').style.display = "none";
+			document.getElementById('span_ti2').style.display = "none";
+		}
+}
+	
+
+
+
 
 function cargarSeccion() {
 	ajax = nuevoAjax();

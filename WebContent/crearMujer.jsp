@@ -12,7 +12,7 @@
 
 <html>
 <head>
-   <title>FUNDACIÓN MUJER Y FUTURO</title>
+   <title>MUASOFT - Software - Fundación Ruta Pacífica de las Mujeres</title>
     <meta name="Description" content="Fundación Mujer y Futuro">
   
 
@@ -50,7 +50,7 @@ background-color: #FBD7EB;
 </style>
 
 <link rel="stylesheet" type="text/css" href="css/epoch_styles.css" />
-<script type="text/javascript" src="Scripts/epoch_classes.js"></script>
+<script type="text/javascript" src="Scripts/epoch_classes2.js"></script>
 <script language="JavaScript">
 	//Este script debe ponerse antes del Formulario
 	//Empieza Calendario
@@ -58,7 +58,10 @@ background-color: #FBD7EB;
 	var dp_cal2;
 	window.onload = function() {
 		dp_cal = new Epoch('dp_cal', 'popup', document
-				.getElementById('control6'));
+				.getElementById('fecha_nacimiento'));
+
+
+		
 
 	};
 	//Termina Calendario
@@ -126,6 +129,15 @@ SimpleDateFormat vFormato2 = new SimpleDateFormat("yyy-MM-dd");
 String vFechaActual2 = vFormato2.format(fechaActual);
 
 //List<Object[]> proyectos = bAdministrarPublicaciones.getProyectos();
+
+
+List<Object[]> departamentos = bAdministrarPublicaciones.getDepartamentos();
+List<Object[]> tiposDocumento = bAdministrarPublicaciones.getTiposDocumento();
+List<Object[]> generos = bAdministrarPublicaciones.getGeneros();
+List<Object[]> estadosCiviles = bAdministrarPublicaciones.getEstadosCiviles();
+List<Object[]> etnias = bAdministrarPublicaciones.getEtnias();
+
+
 %>
 
 <form method="post" name="form1" id="form1">  
@@ -140,102 +152,311 @@ String vFechaActual2 = vFormato2.format(fechaActual);
 										</tr>
 										
 										<tr>
-											<td>Tipo Mujer *:</td>
-											<td><select name="control17" id="control17" style="width:250px">
-													<option value="" selected>Seleccione..</option>
-													<option value="S">Inscrita Fundación</option>
-													<option value="N">NO inscrita</option>
-													<option value="T">SOCIA</option>
-											</select></td>
+
+											<td>Nombres *:</td>
+											<td><input id="nombres" name="nombres" type="text"
+												value="" style="width:250px"/></td>
+											<td>Apellidos *:</td>
+											<td><input id="apellidos" name="apellidos" type="text"
+												value="" style="width:250px"/></td>
+
+
+										</tr>
+										
+										<tr>
+											<td>Tipo identificación *:</td>
+											<td><select name="tipo_identificacion" id="tipo_identificacion" style="width:250px" onchange="cambiarVisibilidadTI()">
+											<option value="">Seleccione...</option>
+											<%
+												if(tiposDocumento!=null && tiposDocumento.size()>0){
+													for(Object[] d: tiposDocumento){%>
+														
+														<option value="<%=d[0] %>-<%=d[2] %>" ><%=d[1] %></option>
+														
+														
+														<%
+													}
+												}
+												%>
+											    
+											</select>
+											
+											</td>
+											<td>No. *:</td>
+											<td><input id="documento" name="documento" type="text"
+												value="" style="width:250px"/>
+													
+
+											</td>
+										</tr>
+										<tr>
+
+											<td><span id="span_ti1" style="color: black;">¿ Cuál tipo de identificación ? *:</span></td>
+											<td><span id="span_ti2"><input id="cual_tipo_documento" name="cual_tipo_documento" type="text"
+												value="" style="width:250px"/></span></td>
 											<td></td>
-											<td></td>
-										</tr>
-
-										<tr>
-
-											<td>Primer Nombre *:</td>
-											<td><input id="control1" name="control1" type="text"
-												value="" /></td>
-											<td>Segundo Nombre:</td>
-											<td><input id="control2" name="control2" type="text"
-												value="" /></td>
+											<td><script type="text/javascript">cambiarVisibilidadTI();</script></td>
 
 
 										</tr>
+										
 										<tr>
-											<td>Primer Apellido *:</td>
-											<td><input id="control3" name="control3" type="text"
-												value="" /></td>
-											<td>Segundo Apellido:</td>
-											<td><input id="control4" name="control4" type="text"
-												value="" /></td>
-										</tr>
-										<tr>
-											<td>Número de Cédula *:</td>
-											<td><input id="control5" name="control5" type="text"
-												value="" /></td>
-											<td>Estado Civil *:</td>
-											<td><select name="control7" id="control7" style="width:250px">
+											<td>Departamento nacimiento *:</td>
+											<td><select name="departamento_nacimiento" id="departamento_nacimiento" style="width:250px" onchange="cargarMunicipioCombo('municipio_nacimiento','departamento_nacimiento')">
 													<option value="" selected>Seleccione..</option>
-													<option value="1">SOLTERO(A)</option>
-													<option value="2">CASADO(A)</option>
-													<option value="3">VIUDO(A)</option>
-													<option value="4">SEPARADO(A)</option>
-													<option value="5">UNION LIBRE</option>
-													<option value="6">DIVORCIADO(A)</option>
-
+												<%
+												if(departamentos!=null && departamentos.size()>0){
+													for(Object[] d: departamentos){%>
+														
+														<option value="<%=d[0] %>" ><%=d[1] %></option>
+														
+														
+														<%
+													}
+													
+												}
+												%>
 											</select></td>
+											<td>Municipio nacimiento *:</td>
+											<td><span id="span_municipio_nacimiento"><select name="municipio_nacimiento" id="municipio_nacimiento" style="width:250px">
+																<option value="" selected>Seleccione...</option>
+											</select></span></td>
 										</tr>
 										<tr>
 											<td>Fecha Nacimiento *:</td>
-											<td><input name="control6" id="control6" class="texto"
+											<td><input name="fecha_nacimiento" id="fecha_nacimiento" class="texto"
 												type="text"
-												style="background-color: #D1D6E2; text-align: center; vertical-align: middle"
-												readonly="true" tabindex="2" size="14"
-												value="<%=vFechaActual2%>" /> <img id="cal" name="cal"
+												style="background-color: #D1D6E2; text-align: center; vertical-align: middle; width: 220px"
+												readonly="true" 
+												value="" /> <img id="cal" name="cal" 
 												style="vertical-align: middle"
 												src="images/iconocalendario.gif" title="Calendario"
 												width="25" height="25" onClick="dp_cal.toggle();" /></td>
-											<td>Sexo:</td>
-											<td><select name="control9" id="control9" style="width:250px">
-													<option value="M" selected>MUJER</option>
-													<option value="H">HOMBRE</option>
+											<td>Edad:</td>
+											<td><input name="edad" id="edad" class="texto"
+												type="text"
+												style="background-color: #D1D6E2; width:250px; text-align: center; vertical-align: middle"
+												readonly="true" " 
+												 /></td>
+										</tr>
+										
+										<tr>
+											<td>Sexo *:</td>
+											<td><select name="sexo" id="sexo" style="width:250px">
+													<option value="" selected>Seleccione..</option>
+													<option value="M">MASCULINO</option>
+													<option value="F">FEMENINO</option>
+													
+
+											</select></td>
+											<td>Género *:</td>
+											<td><select name="genero" id="genero" style="width:250px">
+													<option value="" selected>Seleccione..</option>
+													<%
+												if(generos!=null && generos.size()>0){
+													for(Object[] d: generos){%>
+														
+														<option value="<%=d[0] %>" ><%=d[1] %></option>
+														
+														
+														<%
+													}
+													
+												}
+												%>
+
+											</select></td>
+										</tr>
+										
+										<tr>
+											<td>Estado Civil *:</td>
+											<td><select name="estado_civil" id="estado_civil" style="width:250px" onchange="cambiarVisibilidadEC()">
+													<option value="" selected>Seleccione..</option>
+													<%
+												if(estadosCiviles!=null && estadosCiviles.size()>0){
+													for(Object[] d: estadosCiviles){%>
+														
+														<option value="<%=d[0] %>-<%=d[2] %>" ><%=d[1] %></option>
+														
+														
+														<%
+													}
+													
+												}
+												%>
+													
+													
+													
+													
+											</select></td>
+											<td>Etnia *:</td>
+											<td><select name="etnia" id="etnia" style="width:250px">
+													<option value="" selected>Seleccione..</option>
+												<%
+												if(etnias!=null && etnias.size()>0){
+													for(Object[] d: etnias){%>
+														
+														<option value="<%=d[0] %>" ><%=d[1] %></option>
+														
+														
+														<%
+													}
+													
+												}
+												%>
+													
+
+											</select></td>
+										</tr>
+										
+										<tr>
+
+											<td><span id="span_ec1" style="color: black;">¿ Cuál estado civil ? *:</span></td>
+											<td><span id="span_ec2"><input id="cual_estado_civil" name="cual_estado_civil" type="text"
+												value="" style="width:250px"/></span></td>
+											<td></td>
+											<td><script type="text/javascript">cambiarVisibilidadEC();</script></td>
+
+
+										</tr>
+										
+										
+										<tr>
+											<td>Régimen de salud *:</td>
+											<td><select name="regimen" id="regimen" style="width:250px" onchange="cargarEpsArs()">
+													<option value="" selected>Seleccione..</option>
+													<option value="C" >CONTRIBUTIVO</option>
+													<option value="S" >SUBSIDIADO</option>
+													<option value="N" >NINGUNO</option>
+											</select></td>
+											<td><span id="span_eps_ars2" style="color:black;">EPS / ARS *:</span></td>
+											<td><span id="span_eps_ars"><select name="eps_ars" id="eps_ars" style="width:250px" onchange="cambiarVisibilidadEpsArs()">
+													<option value="" selected>Seleccione..</option>
+											
+											</select></span></td>
+										</tr>
+										<tr>
+
+											<td><span id="span_eps1" style="color: black;">¿ Cuál eps/ars ? *:</span></td>
+											<td><span id="span_eps2"><input id="cual_eps_ars" name="cual_eps_ars" type="text"
+												value="" style="width:250px"/></span></td>
+											<td></td>
+											<td><script type="text/javascript">cargarEpsArs();</script></td>
+
+
+										</tr>
+										
+										<tr>
+											<td>Profesión u oficio *:</td>
+											<td ><input id="profesion" name="profesion" type="text"
+												value="" style="width:250px"/></td>
+												<td></td>
+												<td></td>
+												
+										</tr>
+										
+										<tr>
+											<td>Cabeza de hogar *:</td>
+											<td><select name="cabeza_hogar" id="cabeza_hogar" style="width:250px">
+													<option value="" selected>Seleccione..</option>
+													<option value="S" >SI</option>
+													<option value="N" >NO</option>
+													
+											</select></td>
+											<td>Subsidio recibido *:</td>
+											<td><select name="subsidio" id="subsidio" style="width:250px" onchange="cambiarVisibilidadSubsidio();">
+													<option value="" selected>Seleccione..</option>
+													<option value="N" >NACIONAL</option>
+													<option value="M" >MUNICIPAL</option>
+													<option value="I" >NINGUNO</option>
+													
+													
 											</select></td>
 										</tr>
 										<tr>
+											<td><span id="span_subsidio1" style="color:black;">¿ Cuales subsidios ? *:</span></td>
+											<td ><span id="span_subsidio2" style="color:black;"><input id="cual_subsidio" name="cual_subsidio" type="text"
+												value="" style="width:250px"/></span></td>
+												<td></td>
+												<td><script type="text/javascript">cambiarVisibilidadSubsidio();</script></td>
+										</tr>
+										
+										
+										<tr>
 											<td>Número Hijas *:</td>
-											<td><input id="control10" name="control10" type="text"
+											<td><input id="hijas" name="hijas" type="text"
 												value="0" style="width: 30px" /></td>
 											<td>Número Hijos *:</td>
-											<td><input id="control11" name="control11" type="text"
+											<td><input id="hijos" name="hijos" type="text"
 												value="0" style="width: 30px" /></td>
+										</tr>
+										
+										
+										<tr>
+											<td>Edades hijos *:</td>
+											<td colspan="2" ><input type="checkbox" name="rango_edad1" id="rango_edad1" value="S"> 0-5 años&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="rango_edad2" id="rango_edad2" value="S">6-10 años <input type="checkbox" name="rango_edad3" id="rango_edad3" value="S"> 11-14 años</td>
+											
+										</tr>
+										
+										<tr>
+											<td></td>
+											<td colspan="2" ><input type="checkbox" name="rango_edad4" id="rango_edad4" value="S"> 15-21 años <input type="checkbox" name="rango_edad5" id="rango_edad5" value="S"> Mayores de 21 años</td>
+											
+										</tr>
+										
+										
+										
+										
+										
+										<tr>
+											<td>Departamento residencia *:</td>
+											<td><select name="departamento_residencia" id="departamento_residencia" style="width:250px" onchange="cargarMunicipioCombo('municipio_residencia','departamento_residencia')">
+													<option value="" selected>Seleccione..</option>
+												<%
+												if(departamentos!=null && departamentos.size()>0){
+													for(Object[] d: departamentos){%>
+														
+														<option value="<%=d[0] %>" ><%=d[1] %></option>
+														
+														
+														<%
+													}
+													
+												}
+												%>
+											</select></td>
+											<td>Municipio residencia *:</td>
+											<td><span id="span_municipio_residencia"><select name="municipio_residencia" id="municipio_residencia" style="width:250px">
+																<option value="" selected>Seleccione...</option>
+											</select></span></td>
 										</tr>
 										<tr>
 											<td>Dirección *:</td>
-											<td><input id="control12" name="control12" type="text"
-												value="" /></td>
+											<td><input id="direccion" name="direccion" type="text"
+												value="" style="width:250px"/></td>
 											<td>Teléfono(s) *:</td>
-											<td><input id="control13" name="control13" type="text"
-												value="" /></td>
+											<td><input id="telefonos" name="telefonos" type="text"
+												value=""  style="width:250px"/></td>
 										</tr>
 										<tr>
 											<td>Correo electrónico:</td>
-											<td><input id="control8" name="control8" type="text"
-												value="" /></td>
+											<td><input id="correo" name="correo" type="text"
+												value=""  style="width:250px"/></td>
 											<td></td>
 											<td></td>
 
 										</tr>
 										<tr>
-											<td>Tipo dirección *:</td>
-											<td><select name="control14" id="control14" onchange="cargarTiposDirecciones()" style="width:250px"
+											<td>¿ Ha ejercido liderazgo ?*:</td>
+											<td><select name="liderazgo" id="liderazgo"  style="width:250px" onchange="cambiarVisibilidadLiderazgo();"
 												>
 													<option value="" selected>Seleccione...</option>
-													<option value="C">COMUNA</option>
-													<option value="CO">CORREGIMIENTO</option>
+													<option value="S">SI</option>
+													<option value="N">NO</option>
 											</select></td>
-											<td></td>
-											<td></td>
+											<td><span id="span_liderazgo" style="color: black;">Años de liderazgo *:</span></td>
+											<td><input id="anos_liderazgo" name="anos_liderazgo" type="text"
+												value="0" style="width: 30px" /><script type="text/javascript">cambiarVisibilidadLiderazgo();</script></td>
 										</tr>
 
 										<tr>
@@ -252,10 +473,7 @@ String vFechaActual2 = vFormato2.format(fechaActual);
 	</tr>
 </table>
 <span id="detalle"></span>
-<script>
-cargarTiposDirecciones();
 
-</script>
 	<input name="hdnGuardarPublicacion" id="hdnGuardarPublicacion"
 			type="hidden" value="0" />
 </form>
