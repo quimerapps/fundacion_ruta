@@ -16,11 +16,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <%
-	String id = request.getParameter("id");
+
 String id_mujer = request.getParameter("id_mujer");
 
 
-	int exito = bAdministrarPublicaciones.crearMC(id_mujer, id);
+	int exito = bAdministrarPublicaciones.crearMC(id_mujer);  
 %>
 
 <input name="hdnExito" type="hidden" value="<%=exito%>"

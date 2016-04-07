@@ -19,8 +19,7 @@
 	String c = request.getParameter("c");
 	String id = request.getParameter("id");
 	String cual = request.getParameter("cual");
-	String tipo = request.getParameter("tipo");
-	String cargos = request.getParameter("cargos");
+
 
 	String[] valores = c.split("-");
 	if (valores != null && valores[1].equals("N")) {
@@ -31,8 +30,7 @@
 
 	//out.println("tipo organizac "+valores[0]+" mujer "+ id+" justificac "+	cual+" tipo participa "+tipo+" cargos "+cargos);
 	
-	int exito = bAdministrarPublicaciones.crearParticipacion(valores[0], id,
-			cual,tipo,cargos);
+	int exito = bAdministrarPublicaciones.crearParticipacion(valores[0], id,cual); 
 %>
 
 <input name="hdnExito" type="hidden" value="<%=exito%>" id="hdnExito" />

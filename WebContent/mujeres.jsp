@@ -10,8 +10,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-     <title>FUNDACIÓN MUJER Y FUTURO</title>
-    <meta name="Description" content="Fundación Mujer y Futuro">
+   <title>MUASOFT Software - Fundación Ruta Pacífica de las Mujeres</title>
+    <meta name="Description" content="MUASOFT Software - Fundación Ruta Pacífica de las Mujeres">
 <meta name="viewport" content="initial-scale=1.0,width=device-width">
     <script type="text/javascript" src="Scripts/noticias.js" charset="UTF-8"></script>
 <script type="text/javascript" src="Scripts/claves.js" charset="UTF-8"></script>
@@ -160,32 +160,27 @@
 					<div class="post">
   
 						<div class="content">
-							<h4>Hoja de Vida Mujeres Fundación</h4>
-  						<p>Listado de mujeres que participan en la fundación</p>
+							<h4>Hoja de vida mujeres </h4>
+  					
 <br/><br/>
-<a href="#" onclick="window.open('/web/crearMujer.jsp', 'popup', 'toolbar=no, menubar=no, scrollbars=no, resizable=no, width=850, height=400'); return false;" style="text-decoration:none">(Ingresar nueva mujer)</a><br><br>
+<a href="#" onclick="window.open('/web/crearMujer.jsp', 'popup', 'toolbar=no, menubar=no, scrollbars=no, resizable=no, width=970, height=600'); return false;" style="text-decoration:none">(Ingresar nueva mujer)</a><br><br>
 
 
 	    <center>
 	    <table border="0" width="100%" cellpadding="2">
 				<tr>
 
-					<td>Primer Nombre :</td>
-					<td><input id="control1" name="control1" type="text" value="" /></td>
-					<td>Segundo Nombre:</td>
-					<td><input id="control2" name="control2" type="text" value="" /></td>
+					<td>Nombres :</td>
+					<td><input id="nombres" name="nombres" type="text" value="" /></td>
+					<td>Apellidos:</td>
+					<td><input id="apellidos" name="apellidos" type="text" value="" /></td>
 
 
 				</tr>
+				
 				<tr>
-					<td>Primer Apellido :</td>
-					<td><input id="control3" name="control3" type="text" value="" /></td>
-					<td>Segundo Apellido:</td>
-					<td><input id="control4" name="control4" type="text" value="" /></td>
-				</tr>
-				<tr>
-					<td>Número de Cédula :</td>
-					<td><input id="control5" name="control5" type="text" value="" /></td>
+					<td>No. identificación:</td>
+					<td><input id="documento" name="documento" type="text" value="" /></td>
 					<td></td>
 					<td></td>
 				</tr>
@@ -221,13 +216,13 @@
 	<div class="container">
 		<img src="home_files/logo-sm.png" alt="">
 		<ul class="list-inline social">
-			<li><a href="https://www.facebook.com/fundacionmujeryfuturo" target="_blank"><i class="fa fa-facebook"></i></a></li>
-			<li><a href="http://www.mujeryfuturo.org" target="_blank" ><i class="fa fa-twitter"></i></a></li>
+			<li><a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+			<li><a href="#" target="_blank" ><i class="fa fa-twitter"></i></a></li>
 			
 
 		</ul>
 		<p>
-			Contacto: direccion@mujeryfuturo.org<br>Teléfonos: (+57-7)6341589 - (+57)3105765181<br>Diseñado por: quimerapps.com
+			Contacto: comunicaciones@rutapacifica.org.co<br>http://www.rutapacifica.org.co//<br>Diseñado por: quimerapps.com
 		</p>
 	</div></center>
 	</footer>

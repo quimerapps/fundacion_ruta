@@ -18,32 +18,24 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
 
-String pn = request.getParameter("pn");
-String sn = request.getParameter("sn");
-String pa = request.getParameter("pa");
-String sa  = request.getParameter("sa");
-String doc  = request.getParameter("doc");
-String id  = request.getParameter("id");
+String pn = request.getParameter("n");
+String pa = request.getParameter("a");
+String doc  = request.getParameter("d");
+
 
 if(pn!=null && pn.equals("null")){
 	pn = null;
 	
 }
 
-if(sn!=null && sn.equals("null")){
-	sn = null;	
-	
-}
+
 
 if(pa!=null && pa.equals("null")){
 	pa = null;	
 	
 }
 
-if(sa!=null && sa.equals("null")){
-	sa = null;	
-	
-}
+
 if(doc!=null && doc.equals("null")){
 	
 	doc = null;	
@@ -51,7 +43,7 @@ if(doc!=null && doc.equals("null")){
 
 
 
-List<Object[]> administradores = bAdministrarPublicaciones.getMujeresS(pn,sn,pa,sa,doc);
+List<Object[]> administradores = bAdministrarPublicaciones.getMujeresS2(pn,pa,doc);
 
 	if (administradores.size() > 0) {
 %>
@@ -64,7 +56,7 @@ List<Object[]> administradores = bAdministrarPublicaciones.getMujeresS(pn,sn,pa,
 		<div align="center" style="color:#FFFFFF">NOMBRE</div>
 		</td>
 		<td bgcolor="#E81D8F">
-		<div align="center" style="color:#FFFFFF">DOCUMENTO</div>
+		<div align="center" style="color:#FFFFFF">No. Identificación</div>
 		</td>
 		<td bgcolor="#E81D8F">
 		<div align="center" style="color:#FFFFFF"></div>
@@ -87,10 +79,10 @@ List<Object[]> administradores = bAdministrarPublicaciones.getMujeresS(pn,sn,pa,
 	<tr >
 		<td align="center" bgcolor="#EEEEEE"><font color="black"><%=j%></font></td>
 		<td align="center" bgcolor="#EEEEEE">
-		<div align="left"><font color="black"><%=i[1] + " " + i[2] + " " + i[3] + " "+ i[4] %></font></div>
+		<div align="left"><font color="black"><%=i[1] + " " + i[2]  %></font></div>
 		</td>
-		<td align="center" bgcolor="#EEEEEE" ><font color="black"><%=i[5] %></font></td>
-		<td align="center" bgcolor="#EEEEEE"><a href="#" onclick="cargarCrearMC(<%=i[0] %>,<%=id %>); return false;">Inscribir en curso</a></td>
+		<td align="center" bgcolor="#EEEEEE" ><font color="black"><%=i[4] %></font></td>
+		<td align="center" bgcolor="#EEEEEE"><a href="#" onclick="cargarCrearMC(<%=i[0] %>); return false;">Seleccionar para caso</a></td>
 		
 	</tr>
 	<%

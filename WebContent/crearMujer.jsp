@@ -12,8 +12,8 @@
 
 <html>
 <head>
-   <title>MUASOFT - Software - Fundación Ruta Pacífica de las Mujeres</title>
-    <meta name="Description" content="Fundación Mujer y Futuro">
+   <title>MUASOFT Software - Fundación Ruta Pacífica de las Mujeres</title>
+    <meta name="Description" content="MUASOFT Software - Fundación Ruta Pacífica de las Mujeres">
   
 
 <? header("Cache-Control: no-cache, must-revalidate");?>
@@ -72,39 +72,134 @@ background-color: #FBD7EB;
 <body><div id="contenedor">
 <%
 		String [] datos = null;
-			
-			
-			String hdnGuardarPublicacion = request.getParameter("hdnGuardarPublicacion");
-		 	int numeroDatos = 17;
-
-			int actualizo = 0;
-			if(hdnGuardarPublicacion!=null && hdnGuardarPublicacion.equals("1")){
-
-		datos = new String[numeroDatos];
-		for(int i=0; i<=numeroDatos-1; i++){
-			
-			
-			datos[i] = request.getParameter("control"+(i+1)); 
-			
-			if(datos[i]!=null && datos[i].trim().equals("")){
-				datos[i] = null;
-			}
-			
-			if(datos[i]!=null && datos[i].trim().equals("null")){
-					datos[i] = null;
-				}
-			}
+		String [] division = null;	
 		
-		   
-		actualizo = bAdministrarPublicaciones.guardarHojaVida(datos);
-		//out.println(actualizo);
+		String hdnGuardarPublicacion = request.getParameter("hdnGuardarPublicacion");
+	 	int numeroDatos = 33;
+
+		int actualizo = 0;
+		if(hdnGuardarPublicacion!=null && hdnGuardarPublicacion.equals("1")){
+
+					datos = new String[numeroDatos];
+					
+					
+					int filas = 0;
+					datos[filas] = request.getParameter("nombres"); filas++;
+					datos[filas] = request.getParameter("apellidos"); filas++;
+					
+					datos[filas] = request.getParameter("tipo_identificacion"); 
+					division  = datos[filas].split("-");
+					datos[filas] = division[0];
+					filas++;
+					if(division!=null && division[1].equals("S")){
+						datos[filas] = request.getParameter("cual_tipo_documento"); filas++;
+					}else{
+						datos[filas] = null; filas++;
+					}
+					
+					
+					datos[filas] = request.getParameter("documento"); filas++;
+					datos[filas] = request.getParameter("municipio_nacimiento"); filas++;
+					datos[filas] = request.getParameter("fecha_nacimiento"); filas++;
+					datos[filas] = request.getParameter("sexo"); filas++;
+					datos[filas] = request.getParameter("genero"); filas++;
+					
+					datos[filas] = request.getParameter("estado_civil");
+					division  = datos[filas].split("-");
+					datos[filas] = division[0];
+					filas++;
+					if(division!=null && division[1].equals("S")){
+						datos[filas] = request.getParameter("cual_estado_civil"); filas++;
+					}else{
+						datos[filas] = null; filas++;
+					}
+					
+					
+					datos[filas] = request.getParameter("etnia"); filas++;
+					
+					datos[filas] = request.getParameter("regimen"); 
+					if(datos[filas].equals("N")){
+						filas++;
+						datos[filas] = null; filas++;
+						datos[filas] = null; filas++;
+						
+					}else{
+						filas++;
+						datos[filas] = request.getParameter("eps_ars"); 
+						division  = datos[filas].split("-");
+						datos[filas] = division[0];
+						filas++;
+						if(division!=null && division[1].equals("O")){
+							datos[filas] = request.getParameter("cual_eps_ars"); filas++;
+						}else{
+							datos[filas] = null; filas++;
+						}
+					}
+					
+					
+					datos[filas] = request.getParameter("profesion"); filas++;
+					datos[filas] = request.getParameter("cabeza_hogar"); filas++;
+					
+					
+					datos[filas] = request.getParameter("subsidio"); 
+					if(!(datos[filas].equals("I"))){
+						filas++;
+						datos[filas] = request.getParameter("cual_subsidio"); filas++;
+					}else{
+						filas++;
+						datos[filas] = null; filas++;
+					}
+					
+					
+					datos[filas] = request.getParameter("hijas"); filas++;
+					datos[filas] = request.getParameter("hijos"); filas++;
+					datos[filas] = request.getParameter("municipio_residencia"); filas++;
+					datos[filas] = request.getParameter("direccion"); filas++;
+					datos[filas] = request.getParameter("telefonos"); filas++;
+					
+					datos[filas] = request.getParameter("liderazgo");
+					if(datos[filas].equals("S")){
+						filas++;
+						datos[filas] = request.getParameter("anos_liderazgo"); filas++;
+						datos[filas] = request.getParameter("meses_liderazgo"); filas++;
+					}else{
+						filas++;
+						datos[filas] = null; filas++;
+						datos[filas] = null; filas++;
+						
+					}
+					
+					datos[filas] = request.getParameter("h_rango_edad1"); filas++;
+					datos[filas] = request.getParameter("h_rango_edad2"); filas++;
+					datos[filas] = request.getParameter("h_rango_edad3"); filas++;
+					datos[filas] = request.getParameter("h_rango_edad4"); filas++;
+					datos[filas] = request.getParameter("h_rango_edad5"); filas++;
+					datos[filas] = request.getParameter("correo"); filas++;
+					
+					
+					
+					for(int i=0; i<=numeroDatos-1; i++){
+						
+						
+						if(datos[i]!=null && datos[i].trim().equals("")){
+							datos[i] = null;
+						}
+						
+						if(datos[i]!=null && datos[i].trim().equals("null")){
+							datos[i] = null;
+						}
+					}
+					
+					   
+					actualizo = bAdministrarPublicaciones.guardarHojaVida(datos);
+					
 		
 			}	 		
 			
 		if(actualizo==1){
 	%>
 	<script>
-		alert("HOJA DE VIDA CREADA EXITOSAMENTE.");
+		alert("DATOS GENERALES DE LA MUJER FUERON INGRESADOS CON EXITO");
 
 		try {
 			window.opener.document.form1.submit();
@@ -399,7 +494,7 @@ List<Object[]> etnias = bAdministrarPublicaciones.getEtnias();
 										</tr>
 										
 										<tr>
-											<td></td>
+											<td><input type="hidden" name="h_rango_edad1" id="h_rango_edad1"><input type="hidden" name="h_rango_edad2" id="h_rango_edad2"><input type="hidden" name="h_rango_edad3" id="h_rango_edad3"><input type="hidden" name="h_rango_edad4" id="h_rango_edad4"><input type="hidden" name="h_rango_edad5" id="h_rango_edad5"></td>
 											<td colspan="2" ><input type="checkbox" name="rango_edad4" id="rango_edad4" value="S"> 15-21 años <input type="checkbox" name="rango_edad5" id="rango_edad5" value="S"> Mayores de 21 años</td>
 											
 										</tr>
@@ -454,9 +549,33 @@ List<Object[]> etnias = bAdministrarPublicaciones.getEtnias();
 													<option value="S">SI</option>
 													<option value="N">NO</option>
 											</select></td>
-											<td><span id="span_liderazgo" style="color: black;">Años de liderazgo *:</span></td>
-											<td><input id="anos_liderazgo" name="anos_liderazgo" type="text"
-												value="0" style="width: 30px" /><script type="text/javascript">cambiarVisibilidadLiderazgo();</script></td>
+											<td><span id="span_liderazgo" style="color: black;">Años-Meses de liderazgo *:</span></td>
+											<td><table><tr><td><select name="anos_liderazgo" id="anos_liderazgo" style="width: 80px" >
+													<option value="0">0 años</option>
+													<option value="1">1 año</option>
+													
+													<%
+													for(int i=2; i<=100; i++){
+														%>
+														<option value="<%=i%>"><%=i%> años</option>
+														<%
+													}
+													%>
+												</select></td><td><select name="meses_liderazgo" id="meses_liderazgo" style="width: 80px" >
+													<option value="0">0 meses</option>
+													<option value="1">1 mes</option>
+													
+													<%
+													for(int i=2; i<=12; i++){
+														%>
+														<option value="<%=i%>"><%=i%> meses</option>
+														<%
+													}
+													%>
+												</select></td></tr>
+												</table>
+												<script type="text/javascript">cambiarVisibilidadLiderazgo();</script>
+												</td>
 										</tr>
 
 										<tr>

@@ -10,8 +10,8 @@
 
 <html>
 <head>
-<title>FUNDACIÓN MUJER Y FUTURO</title>
-<meta name="Description" content="Fundación Mujer y Futuro">
+ <title>MUASOFT Software - Fundación Ruta Pacífica de las Mujeres</title>
+    <meta name="Description" content="MUASOFT Software - Fundación Ruta Pacífica de las Mujeres">
 
 
 <? header("Cache-Control: no-cache, must-revalidate");?>
@@ -49,41 +49,35 @@ body {
 </head>
 <body>
 	<div id="contenedor">
-		<%
-			String id = request.getParameter("id");
-		%>
+	
 		<form method="post" name="form1" id="form1">
 			<table border="0" width="100%" cellpadding="2">
 				<tr>
-
-					<td>Primer Nombre :</td>
-					<td><input id="control1" name="control1" type="text" value="" /></td>
-					<td>Segundo Nombre:</td>
-					<td><input id="control2" name="control2" type="text" value="" /></td>
-
-
-				</tr>
-				<tr>
-					<td>Primer Apellido :</td>
-					<td><input id="control3" name="control3" type="text" value="" /></td>
-					<td>Segundo Apellido:</td>
-					<td><input id="control4" name="control4" type="text" value="" /></td>
-				</tr>
-				<tr>
-					<td>Número de Cédula :</td>
-					<td><input id="control5" name="control5" type="text" value="" /></td>
+					<td>No. identificación :</td>
+					<td><input id="documento" name="documento" type="text" value="" /></td>
 					<td></td>
 					<td></td>
 				</tr>
+				<tr>
+
+					<td>Nombres :</td>
+					<td><input id="nombres" name="nombres" type="text" value="" /></td>
+					<td>Apellidos:</td>
+					<td><input id="apellidos" name="apellidos" type="text" value="" /></td>
+
+
+				</tr>
+				
+				
 			</table>
 			<center>
 			
 			<br /> <input
-									type="button" value=" Consultar " onclick="consultarMujer(<%=id%>);" /> <br />
+									type="button" value=" Consultar " onclick="cargarMujeres2();" /> <br />
 			
 			</center>
 			
-			<span id="detalle"></span>
+			<span id="detalleAdministradores"></span>
 		</form>
 	</div>
 </body>

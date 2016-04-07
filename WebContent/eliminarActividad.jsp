@@ -22,7 +22,7 @@
 	int actualizo = bAdministrarPublicaciones.eliminarActividad(id);
 %>
 
-<input name="hdnElimino" id="hdnElimino" type="hidden"
+<input name="hdnElimino" id="hdnElimino" type="hidden" 
 	value="<%=actualizo%>" />
 
 

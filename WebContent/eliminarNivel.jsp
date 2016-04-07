@@ -18,7 +18,7 @@
 
 //id del tema
 	String id = request.getParameter("id");
-
+  
 	int actualizo = bAdministrarPublicaciones.eliminarNivel(id);  
 %>
 

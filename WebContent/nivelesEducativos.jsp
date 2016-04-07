@@ -9,8 +9,8 @@
 <%@page import="beans.Publicacion"%>	<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-      <title>FUNDACIÓN MUJER Y FUTURO</title>
-    <meta name="Description" content="Fundación Mujer y Futuro">
+   <title>MUASOFT Software - Fundación Ruta Pacífica de las Mujeres</title>
+    <meta name="Description" content="MUASOFT Software - Fundación Ruta Pacífica de las Mujeres">
 <meta name="viewport" content="initial-scale=1.0,width=device-width">
     <script type="text/javascript" src="Scripts/noticias.js" charset="UTF-8"></script>
 <script type="text/javascript" src="Scripts/claves.js" charset="UTF-8"></script>
@@ -18,7 +18,7 @@
 <link rel="stylesheet" type="text/css"
 	href="home_files/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="home_files/style.css">
-
+  
 <style>
 .filters:before {
 	width: 0% !important;
@@ -170,12 +170,12 @@
 							<h4>Niveles educativos de: <%=nombreCurso %></h4>
 
 <br/><br/>
-<a href="#" onclick="window.open('/web/crearNivelEducativo.jsp?id=<%=curso %>', 'popup', 'toolbar=no, menubar=no, scrollbars=no, resizable=no, width=500, height=350'); return false;" style="text-decoration:none">(Nuevo nivel educativo)</a><br><br>
+<a href="#" onclick="window.open('/web/crearNivelEducativo.jsp?id=<%=curso %>', 'popup', 'toolbar=no, menubar=no, scrollbars=no, resizable=no, width=500, height=350'); return false;" style="text-decoration:none">(ingresar nuevo nivel educativo a mujer)</a><br><br>
 	    <center><span id="detalleProcesos"></span>
 <span id="detalleAdministradores"></span>
 <input name="hdnUs" id="hdnUs" type="hidden"
 	value="<%=bUsuario.getIdUsuario()%>" />
-	   <script>
+	   <script>  
 	 
 	   cargarNiveles(<%=curso%>);
 </script> 
@@ -203,13 +203,13 @@
 	<div class="container">
 		<img src="home_files/logo-sm.png" alt="">
 		<ul class="list-inline social">
-			<li><a href="https://www.facebook.com/fundacionmujeryfuturo" target="_blank"><i class="fa fa-facebook"></i></a></li>
-			<li><a href="http://www.mujeryfuturo.org" target="_blank" ><i class="fa fa-twitter"></i></a></li>
+			<li><a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+			<li><a href="#" target="_blank" ><i class="fa fa-twitter"></i></a></li>
 			
 
 		</ul>
 		<p>
-			Contacto: direccion@mujeryfuturo.org<br>Teléfonos: (+57-7)6341589 - (+57)3105765181<br>Diseñado por: quimerapps.com
+			Contacto: comunicaciones@rutapacifica.org.co<br>http://www.rutapacifica.org.co//<br>Diseñado por: quimerapps.com
 		</p>
 	</div></center>
 	</footer>

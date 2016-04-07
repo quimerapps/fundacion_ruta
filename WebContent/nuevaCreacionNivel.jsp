@@ -25,7 +25,7 @@
 
 		cual = null;
 
-	}
+	}   
 
 	int exito = bAdministrarPublicaciones.crearNivel(valores[0], id,
 			cual);

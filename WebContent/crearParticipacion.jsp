@@ -13,8 +13,8 @@
 
 <html>
 <head>
-   <title>FUNDACIÓN MUJER Y FUTURO</title>
-    <meta name="Description" content="Fundación Mujer y Futuro">
+   <title>MUASOFT Software - Fundación Ruta Pacífica de las Mujeres</title>
+    <meta name="Description" content="MUASOFT Software - Fundación Ruta Pacífica de las Mujeres">
   
 
 <? header("Cache-Control: no-cache, must-revalidate");?>
@@ -54,26 +54,14 @@ background-color: #FBD7EB;
 <%
 String id = request.getParameter("id");
 List<Object[]> cursos = bAdministrarPublicaciones.getOrganizaciones();
-List<Object[]> cursos2 = bAdministrarPublicaciones.getCargos();
+
 %>
 <form method="post" name="form1" id="form1">  
 <table border="0" width="100%" cellpadding="2">
-<tr>   
-		<td width="34%"><span class="Estilo3"><span
-			class="Estilo4 Estilo8">*</span>Tipo participación:</span></td>
-		<td width="66%">
-		<select name="tipo" id="tipo" style="width:300px">
-			<option value="" selected>Seleccione..</option>
-			<option value="MU" >Sólo Mujeres</option>
-			<option value="MI" >Mixta (Hombres, Mujeres, LGBTI)</option>
-	
-		</select>
-		
-		</td>
-		</tr>
+ 
 	<tr>   
 		<td width="34%"><span class="Estilo3"><span
-			class="Estilo4 Estilo8">*</span>Tipo organización:</span></td>
+			class="Estilo4 Estilo8">*</span>Organización:</span></td>
 		<td width="66%">
 		<select name="niveles" id="niveles" style="width:300px" onchange="cambiarNivel();">
 	<option value="" selected>Seleccione..</option>
@@ -100,26 +88,7 @@ List<Object[]> cursos2 = bAdministrarPublicaciones.getCargos();
 		
 		</tr>
 		
-		<tr>   
-		<td width="34%"><span class="Estilo3"><span
-			class="Estilo4 Estilo8">*</span>Cargo:</span></td>
-		<td width="66%">
-		<select name="cargos" id="cargos" style="width:300px" >
-	<option value="" selected>Seleccione..</option>
-	<%  if (cursos2!=null && cursos2.size() > 0) {
-		for(Object[] c: cursos2){
-			%>
-			<option value="<%=c[0]%>"><%=c[1]%></option>
-			<%
-			
-		}
 		
-			}
-	%>
-</select>
-		
-		</td>
-		</tr>
 		
 		
 	<tr>

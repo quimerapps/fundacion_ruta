@@ -27,19 +27,15 @@ List<Object[]> cursos = bAdministrarPublicaciones.getParticipaciones(id);
 %>
 <table width="100%" border="0" cellspacing="2" cellpadding="2">
 	<tr>
-		<td bgcolor="#E81D8F">
+		<td bgcolor="#EE486C">
 		<div align="left" style="color:#FFFFFF">ITEM</div>
 		</td>
-		<td bgcolor="#E81D8F">
-		<div align="left" style="color:#FFFFFF">TIPO PARTICIPACIÓN</div>
+		
+		<td bgcolor="#EE486C">
+		<div align="left" style="color:#FFFFFF">ORGANIZACIÓN</div>
 		</td>
-		<td bgcolor="#E81D8F">
-		<div align="left" style="color:#FFFFFF">TIPO ORGANIZACIÓN</div>
-		</td>
-		<td bgcolor="#E81D8F">
-		<div align="left" style="color:#FFFFFF">CARGO</div>
-		</td>
-		<td bgcolor="#E81D8F">
+		
+		<td bgcolor="#EE486C">
 		<div align="center" style="color:#FFFFFF"></div>
 		</td>
 		
@@ -54,29 +50,21 @@ List<Object[]> cursos = bAdministrarPublicaciones.getParticipaciones(id);
 				if(j%2==0){
 					color ="#FFFFFF";
 				}
-				if(i[4]==null){
-					i[4]="";
+				if(i[3]==null){
+					i[3]="";
 				}else{
-					i[4]=": "+i[4];
+					i[3]=": "+i[3];
 				}
 				
-				if((""+i[5]).equals("MI")){
-					i[5]="Mixta (Hombres, mujeres, LGBTI)";
-				}else{
-					i[5]="Sólo Mujeres";
-				}
+			
 	%>  
 	<tr >
 		<td align="left" bgcolor="<%=color %>"><font color="black"><%=j%></font></td>
+		
 		<td align="left" bgcolor="<%=color %>">
-		<div align="left"><font color="black"><%=i[5]%></font></div>
+		<div align="left"><font color="black"><%=i[4] +" "+ i[3]%></font></div>
 		</td>
-		<td align="left" bgcolor="<%=color %>">
-		<div align="left"><font color="black"><%=i[6] +" "+ i[4]%></font></div>
-		</td>
-		<td align="left" bgcolor="<%=color %>">
-		<div align="left"><font color="black"><%=i[7]%></font></div>
-		</td>
+		
 		<td align="center" bgcolor="<%=color %>"><a href="#" onclick="cargarEliminarParticipaciones('<%=i[0]%>','<%=id %>'); return false;">Eliminar</a></td>  
 				
 	</tr>
@@ -88,7 +76,7 @@ List<Object[]> cursos = bAdministrarPublicaciones.getParticipaciones(id);
 <%
 	} else {
 %>
-Aún no existen participaciones registradas
+Aún no existen organizaciones registradas
 <%
 	}
 %>

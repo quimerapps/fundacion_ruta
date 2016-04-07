@@ -13,8 +13,8 @@
 
 <html>
 <head>
-   <title>FUNDACIÓN MUJER Y FUTURO</title>
-    <meta name="Description" content="Fundación Mujer y Futuro">
+   <title>MUASOFT Software - Fundación Ruta Pacífica de las Mujeres</title>
+    <meta name="Description" content="MUASOFT Software - Fundación Ruta Pacífica de las Mujeres">
   
 
 <? header("Cache-Control: no-cache, must-revalidate");?>

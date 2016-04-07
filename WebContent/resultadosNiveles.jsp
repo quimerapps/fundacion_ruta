@@ -19,7 +19,7 @@
 <%
 
 String id=request.getParameter("id");
-
+    
 
 List<Object[]> cursos = bAdministrarPublicaciones.getNiveles(id);
 
@@ -27,13 +27,13 @@ List<Object[]> cursos = bAdministrarPublicaciones.getNiveles(id);
 %>
 <table width="100%" border="0" cellspacing="2" cellpadding="2">
 	<tr>
-		<td bgcolor="#E81D8F">
+		<td bgcolor="#EE486C">
 		<div align="left" style="color:#FFFFFF">ITEM</div>
 		</td>
-		<td bgcolor="#E81D8F">
+		<td bgcolor="#EE486C">
 		<div align="left" style="color:#FFFFFF">NIVEL EDUCATIVO</div>
 		</td>
-		<td bgcolor="#E81D8F">
+		<td bgcolor="#EE486C">
 		<div align="center" style="color:#FFFFFF"></div>
 		</td>
 		
